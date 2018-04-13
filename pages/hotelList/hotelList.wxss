@@ -1,0 +1,4 @@
+/* pages/hotelList/hotelList.wxss */
+.hotels{
+    padding: 50rpx 0;
+}

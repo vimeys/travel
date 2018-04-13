@@ -1,0 +1,15 @@
+<view class="bd20"></view>
+<view class="prev-list">
+    <navigator url="../prevDetail/prevDetail?id={{}}">
+        <view class="prev-li">
+            <view class="prev-test">
+                <view class="prev-title">九月沙哈拉负重徒步7天游asdfas娃儿水电费三分
+                    极限下的生存挑战sadfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasf</view>
+                <view class="prev-time">2018-12-25</view>
+            </view>
+            <view class="prev-image">
+                <image src="../image/goods.png"></image>
+            </view>
+        </view>
+    </navigator>
+</view>

@@ -1,0 +1,144 @@
+/**index.wxss**/
+
+
+/*主题推荐*/
+.theme{
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 30rpx 40rpx;
+}
+.theme-left{
+  display: flex;
+  flex-direction: column;
+  margin-right: 10rpx;
+}
+.theme-left-top{
+  position: relative;
+  width: 390rpx;
+  height: 220rpx;
+  margin-bottom: 10rpx;
+}
+
+.theme-left-topBg{
+  width: 390rpx;
+  height: 220rpx;
+  border-radius: 10rpx;
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: 2;
+}
+.theme-module{
+  width: 390rpx;
+  height: 220rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: 3;
+}
+.theme-module-text{
+  background: rgba(255,255,255,.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.theme-module-text view:first-child{
+  width: 210rpx;
+  font-size: 36rpx;
+  color:#4EBAFF;
+  text-align: center;
+}
+.theme-module-text view:last-child{
+  width: 210rpx;
+  font-size: 36rpx;
+  color:#0D5029;
+  text-align: center;
+}
+.theme-module-triangle{
+  position: relative;
+  left: -110rpx;
+  width: 0;
+  height: 0;
+  border: 110rpx solid transparent;
+  border-top: 220rpx solid rgba(255,255,255,.9);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.theme-right{
+  width: 290rpx;
+  height: 450rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  position: relative;
+}
+.theme-right-bg{
+  width:290rpx;
+  height: 450rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+.theme-right-text{
+  width: 290rpx;
+  height: 150rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  background: rgba(255,255,255,.9);
+  z-index: 3;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.theme-right-text view:first-child{
+  font-size: 36rpx;
+  color:#00BDBB;
+}
+.theme-right-text view:last-child{
+  font-size: 36rpx;
+  color:#0D5029;
+}
+
+
+
+/*往期回顾*/
+.prev-team{
+    display: flex;
+    flex-direction: column;
+}
+.prev-team-card{
+    width: 100%;
+    height: 470rpx;
+    position: relative;
+}
+.prev-team-image{
+    width: 100%;
+    height: 470rpx;
+    position: absolute;
+    z-index: 2;
+    top:0;
+    left: 0;
+}
+.prev-team-text{
+    width: 100%;
+    height: 60rpx;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    background: rgba(0,0,0,.4);
+    color:#fff;
+    text-align: left;
+    line-height: 60rpx;
+}
+.prev-team-people{
+    width: 100%;
+    height: 100rpx;
+    padding: 10rpx 30rpx;
+}

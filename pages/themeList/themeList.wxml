@@ -1,0 +1,41 @@
+<view class="theme-header">
+    <image src="../image/goods.png" class="theme-header-image"></image>
+</view>
+<view class="scroll">
+    <scroll-view scroll-x  class="scroll-item">
+        <view>123</view>
+        <view>saljfla</view>
+        <view>saljfla</view>
+        <view>saljfla</view>
+        <view>saljfla</view>
+        <view>saljfla</view>
+        <view>saljfla</view>
+        <view>saljfla</view>
+        <view>saljfla</view>
+        <view>saljfla</view>
+        <view>saljfla</view>
+        <view>saljfla</view>
+        <view>saljfla</view>
+        <view>saljfla</view>
+        <view>saljfla</view>
+    </scroll-view>
+</view>
+<view class="theme-list">
+    <view class="theme-text">1231safasdfa阿斯顿发送到发送到发撒的发阿斯顿发送到发</view>
+    <view class="theme-li">
+        <image  class="theme-li-image" src="../image/goods.png"></image>
+        <view>alsdjflasfjlasjdflasjdf</view>
+    </view>
+    <view class="theme-li">
+        <image  class="theme-li-image" src="../image/goods.png"></image>
+        <view>alsdjflasfjlasjdflasjdf</view>
+    </view>
+    <view class="theme-li">
+        <image  class="theme-li-image" src="../image/goods.png"></image>
+        <view>alsdjflasfjlasjdflasjdf</view>
+    </view>
+    <view class="theme-li">
+        <image  class="theme-li-image" src="../image/goods.png"></image>
+        <view>alsdjflasfjlasjdflasjdf</view>
+    </view>
+</view>

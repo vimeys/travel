@@ -1,0 +1,10 @@
+<view class="moduleHeader">
+    <view class="moduleHeader-text">主题推荐</view>
+    <navigator url='{{src}}'>
+        <view class="moduleHeader-point">
+            <view class="point"></view>
+            <view class="point"></view>
+            <view class="point"></view>
+        </view>
+    </navigator>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "banner": "../../component/banner",
+    "hotel":"../../component/hotelList/hotelList"
+  }
+}

@@ -1,0 +1,30 @@
+/* pages/prevList/prevList.wxss */
+.prev-list{
+    padding: 30rpx;
+}
+.prev-li{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30rpx;
+    border-bottom: 1px solid #eee;
+}
+.prev-title{
+    height: 80rpx;
+    width: 350rpx;
+    overflow: hidden;
+    text-overflow: clip;
+}
+.prev-time{
+    font-size: 18rpx;
+    margin-top: 30rpx;
+}
+.prev-image{
+    width: 260rpx;
+    height: 160rpx;
+    margin-left: 30rpx;
+}
+.prev-image image{
+    width: 260rpx;
+    height: 160rpx;
+    border-radius: 10rpx;
+}

@@ -1,0 +1,6 @@
+<!-- 每月推荐的一个商品 -->
+<view class="mouth">
+    <image class="mouth-bg {{isShadow?'mouth-bg-shadow':''}}" src="../../pages/image/goods.png"></image>
+    <view class="mouth-time" wx:if="{{isTime}}">2018-12-2</view>
+    <view class="mouth-text">十一月的土耳其你见过吗</view>
+</view>

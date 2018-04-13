@@ -1,0 +1,56 @@
+/*酒店*/
+.hotel-list{
+    display: flex;
+    padding: 0 30rpx 40rpx;
+    flex-flow: row wrap;
+}
+
+.hotel-li{
+    width: 340rpx;
+    margin-bottom: 20rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.hotel-card{
+    position: relative;
+}
+.hotel-image{
+    width: 340rpx;
+    height: 340rpx;
+    z-index: 2;
+    border-radius: 10rpx;
+}
+.hotel-stars{
+    z-index: 3;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 200rpx;
+    height: 40rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,.7);
+
+}
+.hotel-stars image{
+    width: 24rpx;
+    height: 24rpx;
+    margin: 0 6rpx;
+}
+.hotel-li:nth-child(odd){
+    margin-right:10rpx;
+}
+.hotel-name{
+    width: 300rpx;
+    height: 46rpx;
+    font-size: 32rpx;
+    border-radius: 10rpx;
+    border: 1px solid #037D36;
+    text-align: center;
+    /*line-height: 50rpx;*/
+    color:#037D36;
+    margin: 20rpx;
+}

@@ -1,0 +1,19 @@
+{
+  "pages":[
+    "pages/index/index",
+      "pages/mouth/mouth",
+    "pages/prevList/prevList",
+    "pages/hotelList/hotelList",
+    "pages/themeDetail/themeDetail",
+    "pages/prevDetail/prevDetail",
+    "pages/themeList/themeList",
+    "pages/mouthList/mouthList",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "寰宇行旅游",
+    "navigationBarTextStyle":"black"
+  }
+}

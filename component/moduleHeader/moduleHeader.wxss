@@ -1,0 +1,21 @@
+.moduleHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 120rpx;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+}
+
+.moduleHeader-point{
+  display: flex;
+}
+.point{
+  margin: 0 10rpx;
+  border-radius: 50%;
+  background: #000;
+  width: 10rpx;
+  height: 10rpx;
+  opacity: .8;
+}
