@@ -1,1 +1,10 @@
-{}
+{
+  "usingComponents": {
+    "banner":        "../../component/banner/banner",
+    "moduleHeader":  "../../component/moduleHeader/moduleHeader",
+    "mouth":         "../../component/mouth/mouthItem",
+    "bannerDetail":  "../../component/bannerDetail/bannerDetail",
+    "hotelList":     "../../component/hotelList/hotelList",
+    "wxParse":       "../../component/wxParse/wxParse"
+  }
+}

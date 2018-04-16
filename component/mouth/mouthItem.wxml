@@ -1,6 +1,10 @@
 <!-- 每月推荐的一个商品 -->
-<view class="mouth">
-    <image class="mouth-bg {{isShadow?'mouth-bg-shadow':''}}" src="../../pages/image/goods.png"></image>
-    <view class="mouth-time" wx:if="{{isTime}}">2018-12-2</view>
-    <view class="mouth-text">十一月的土耳其你见过吗</view>
-</view>
+<block wx:for="{{Data}}">
+    <navigator url="../mouthDetail/mouthDetail?id={{item.id}}">
+        <view class="mouth">
+            <image class="mouth-bg {{isShadow?'mouth-bg-shadow':''}}" src="{{item.cover_url}}"></image>
+            <view class="mouth-time" wx:if="{{isTime}}">{{item.published_time}}</view>
+            <view class="mouth-text">{{item.title}}</view>
+        </view>
+    </navigator>
+</block>

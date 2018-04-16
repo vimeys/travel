@@ -1,1 +1,37 @@
 /* pages/prevDetail/prevDetail.wxss */
+.prev-title-total{
+    display: flex;
+    flex-direction: column;
+
+}
+.prev-title-time,.prev-title-addr{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 30rpx;
+    margin-bottom: 30rpx;
+}
+.prev-title-text{
+
+}
+.prev-title-image image{
+    width: 50rpx;
+    height: 50rpx;
+    margin-right:20rpx;
+}
+.prev-content{
+    width: 690rpx;
+    margin:  0 auto;
+    text-align: center;
+    background: #F7FFF8;
+    padding-top: 30rpx;
+}
+.prev-content-image image{
+        width: 82rpx;
+        height: 22rpx;
+    margin-bottom: 50rpx;
+}
+.prev-content-context{
+    padding-bottom: 200rpx;
+}

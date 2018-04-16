@@ -1,0 +1,12 @@
+.mouth-detail-title{
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.mouth-detail-image image{
+    width: 82rpx;
+    height: 22rpx;
+}

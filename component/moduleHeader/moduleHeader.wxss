@@ -10,6 +10,8 @@
 
 .moduleHeader-point{
   display: flex;
+  align-items: center;
+  height: 30rpx;
 }
 .point{
   margin: 0 10rpx;

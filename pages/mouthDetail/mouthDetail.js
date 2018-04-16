@@ -1,29 +1,32 @@
-// pages/mouthList/mouthList.js
+// pages/mouthDetail/mouthDetail.js
+import ajax from '../../utils/ajax';
+import  url from '../../utils/url'
+import utils from '../../utils/totalUtil'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      isTime:true,
-      isShadow:true,
-      Data:[
-          {
-              isTime:true,
-          },
-          {
-              isTime:true
-          }
-      ],
+  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.getDetail(options.id)
   },
-
+  getDetail(id){
+    ajax.promise(url.url.detail,{
+      type:3,
+        id:id
+    }).then((json)=>{
+      this.setData({
+          Data:json.data
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

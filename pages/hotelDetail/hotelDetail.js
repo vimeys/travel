@@ -1,20 +1,11 @@
-// pages/mouthList/mouthList.js
+// pages/hotelDetail/hotelDetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      isTime:true,
-      isShadow:true,
-      Data:[
-          {
-              isTime:true,
-          },
-          {
-              isTime:true
-          }
-      ],
+  
   },
 
   /**

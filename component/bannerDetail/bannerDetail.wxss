@@ -1,1 +1,13 @@
-/* component/bannerDetail.wxss */
+.banner-num{
+    width: 135rpx;
+    height: 60rpx;
+    border-bottom-left-radius: 30rpx;
+    border-top-left-radius: 30rpx;
+    background: #00A58C;
+    color:#fafafa;
+    font-size: 26rpx;
+    text-align: center;line-height: 60rpx;
+    /*position: fixed;*/
+    /*!*top:420rpx;*!*/
+    /*right: 0;*/
+}

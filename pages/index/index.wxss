@@ -51,6 +51,9 @@
   color:#4EBAFF;
   text-align: center;
 }
+.theme-module-start{
+    font-size: 24rpx;
+}
 .theme-module-text view:last-child{
   width: 210rpx;
   font-size: 36rpx;
@@ -90,7 +93,7 @@
   flex-direction: column;
   justify-content: space-around;
   text-align: center;
-  background: rgba(255,255,255,.9);
+  background: rgba(255,255,255,.5);
   z-index: 3;
   position: absolute;
   bottom: 0;
@@ -141,4 +144,36 @@
     width: 100%;
     height: 100rpx;
     padding: 10rpx 30rpx;
+}
+
+/*客服按钮*/
+.service{
+    width: 100rpx;
+    height: 100rpx;
+    position: fixed;
+    right: 35rpx;
+    bottom: 65rpx;
+    z-index: 10;
+}
+.service-bg{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    background-color: #11BD82;
+    border-radius: 50%;
+}
+.service-bg image{
+    width: 100rpx;
+    height: 100rpx;
+}
+.service-btn{
+    z-index: 12;
+    width: 100%;
+    height: 100%;
+    border: none;
+    opacity: 0;
+    background-image:url("http://chuantu.biz/t6/283/1523612293x-1404793118.png");
 }

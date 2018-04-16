@@ -1,2 +1,16 @@
-<!--pages/themeDetail/themeDetail.wxml-->
-<text>pages/themeDetail/themeDetail.wxml</text>
+<!--轮播组件-->
+<bannerDetail pageNum="{{pageNum}}" num="{{num}}"></bannerDetail>
+<view class="theme-titel">
+    <view class="theme-combo">
+        <!--<view class="theme-combo-left"></view>-->
+        <view class="them-combo-name">两L人团</view>
+        <!--<view class="theme-combo-right"></view>-->
+    </view>
+    <view class="theme-name">欧洲7国十五日经典游</view>
+</view>
+<view class="bd20"></view>
+<view class="theme-detail">
+    <view class="theme-detail-zan none">图文展示</view>
+    <view class="theme-detail-det">旅游详情</view>
+</view>
+<wxParse detail=""></wxParse>

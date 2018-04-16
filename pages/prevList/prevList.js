@@ -1,4 +1,7 @@
 // pages/prevList/prevList.js
+import  ajax from '../../utils/ajax'
+import url from '../../utils/url'
+import utils from '../../utils/totalUtil'
 Page({
 
   /**
@@ -12,9 +15,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.getList()
   },
 
+    getList(e){
+      ajax.promise(url.url.prevList,{}).then((json)=>{
+        utils.pushHttp(json.data,url.url.http,'cover_url','thumbnail')
+        json.data.add_time=utils.formatYear(json.data.add_time);
+        this.setData({
+            Data:json.data
+        })
+      })
+    },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

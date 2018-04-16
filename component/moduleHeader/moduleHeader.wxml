@@ -1,5 +1,5 @@
 <view class="moduleHeader">
-    <view class="moduleHeader-text">主题推荐</view>
+    <view class="moduleHeader-text">{{title}}</view>
     <navigator url='{{src}}'>
         <view class="moduleHeader-point">
             <view class="point"></view>

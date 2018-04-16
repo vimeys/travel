@@ -1,10 +1,12 @@
 /*酒店*/
 .hotel-list{
     display: flex;
-    padding: 0 30rpx 40rpx;
+    padding: 0 30rpx 10rpx;
     flex-flow: row wrap;
 }
-
+.nav{
+    display: inline-block;
+}
 .hotel-li{
     width: 340rpx;
     margin-bottom: 20rpx;
@@ -40,7 +42,7 @@
     height: 24rpx;
     margin: 0 6rpx;
 }
-.hotel-li:nth-child(odd){
+.nav:nth-child(odd){
     margin-right:10rpx;
 }
 .hotel-name{

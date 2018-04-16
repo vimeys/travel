@@ -1,1 +1,5 @@
-{}
+{
+  "usingComponents": {
+    "mouth":"../../component/mouth/mouthItem"
+  }
+}

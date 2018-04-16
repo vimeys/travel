@@ -5,7 +5,12 @@ Component({
    */
   properties: {
       url:{
-        type:Array
+        type:Array,
+        value:[
+            { url: '../../pages/image/banner.png' },
+            { url: '../../pages/image/banner.png' },
+            { url: '../../pages/image/banner.png' }
+        ]
       }
   },
 
@@ -14,7 +19,7 @@ Component({
    */
   data: {
     autoplay:true,
-    interval:2000,
+    interval:4000,
     duration:1000,
       banner: [
           { url: '../../pages/image/banner.png' },
@@ -31,8 +36,11 @@ Component({
             console.log(this.data.interval)
       },
       swiper(e){
-          var myEventDetail = {index:e.detail.current} // detail对象，提供给事件监听函数
-          var myEventOption = {} // 触发事件的选项
+          var myEventDetail = {
+              index:e.detail.current,
+              length:this.data.url.length
+          }; // detail对象，提供给事件监听函数
+          var myEventOption = {}; // 触发事件的选项
           this.triggerEvent('swiper', myEventDetail, myEventOption)
       }
   }

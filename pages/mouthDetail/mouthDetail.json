@@ -1,6 +1,6 @@
 {
   "usingComponents":{
-    "bannerDetail":  "../../component/bannerDetail/bannerDetail",
+    "mouth":"../../component/mouth/mouthItem",
     "wxParse":"../../component/wxParse/wxParse"
   }
 }

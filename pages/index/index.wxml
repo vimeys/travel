@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view>
-     <banner url="{{banner}}" bindswiper="swiper">
-         <view>这里是插入到组件slot中的内容</view>
+     <banner url="{{banner}}"  bindswiper="swiper">
+         <!--<view>这里是插入到组件slot中的内容</view>-->
      </banner>
     <!--<bannerDetail>-->
         <!--<view>这里是插入到组件slot中的内容</view>-->
@@ -9,64 +9,87 @@
 </view>
 <view class="bd20"></view>
 
-<moduleHeader src="{{themeSrc}}"></moduleHeader>
+<moduleHeader src="{{themeSrc}}" title="{{title[0]}}"></moduleHeader>
 <view class="theme">
     <view class="theme-left">
-        <view class="theme-left-top">
-            <image  class="theme-left-topBg" src="../image/goods.png"></image>
-            <view class="theme-module">
-                <view class="theme-module-text">
-                    <view>888人</view>
-                    <view>两人成团</view>
-                </view>
-            </view>
-        </view>
-        <view class="theme-left-bottom">
+        <navigator url="../themeDetail/themeDetail?id={{theme[0].id}}">
             <view class="theme-left-top">
-                <image  class="theme-left-topBg" src="../image/goods.png"></image>
+                <image  class="theme-left-topBg" src="{{theme[0].logo}}"></image>
                 <view class="theme-module">
                     <view class="theme-module-text">
-                        <view>888人</view>
-                        <view>两人成团</view>
+                        <view>¥{{theme[0].price}} <text class="theme-module-start">起</text></view>
+                        <view>{{theme[0].name}}</view>
+                    </view>
+                </view>
+            </view>
+        </navigator>
+        <navigator url="../themeDetail/themeDetail?id={{theme[1].id}}"></navigator>
+        <view class="theme-left-bottom">
+            <view class="theme-left-top">
+                <image  class="theme-left-topBg" src="{{theme[1].logo}}"></image>
+                <view class="theme-module">
+                    <view class="theme-module-text">
+                        <view>¥{{theme[1].price}}<text class="theme-module-start">起</text></view>
+                        <view>{{theme[1].name}}</view>
                     </view>
                 </view>
             </view>
         </view>
     </view>
-    <view class="theme-right">
-            <image class="theme-right-bg" src="../image/goods.png"></image>
+    <navigator url="../themeDetail/themeDetail?id={{theme[2].id}}">
+        <view class="theme-right">
+            <image class="theme-right-bg" src="{{theme[2].logo}}"></image>
             <view class="theme-right-text">
-                <view>asdfasdf</view>
-                <view>sadfa</view>
+                <view>¥{{theme[2].price}}<text class="theme-module-start">起</text></view>
+                <view>{{theme[2].name}}</view>
             </view>
-    </view>
+        </view>
+    </navigator>
 </view>
 <view class="bd20"></view>
-<moduleHeader src="{{mouthSrc}}"></moduleHeader>
+<moduleHeader src="{{mouthSrc}}" title="{{title[1]}}"></moduleHeader>
 <view class="mouths">
-    <!--<view class="mouth">-->
-        <!--<image class="mouth-bg {{isShadow?'mouth-bg-shadow':''}}" src="../image/goods.png"></image>-->
-        <!--<view class="mouth-time" wx:if="{{isTime}}">2018-12-2</view>-->
-        <!--<view class="mouth-text">十一月的土耳其你见过吗</view>-->
-    <!--</view>-->
-    <mouth></mouth>
+    <mouth isTime="{{false}}" isShow="{{false}}" Data="{{mouths}}"></mouth>
 </view>
-<view class="bd20"></view>
-<moduleHeader src="{{mouthSrc}}"></moduleHeader>
-<view hotels>
-<hotelList></hotelList>
 
-</view>
+
 <view class="bd20"></view>
-<moduleHeader src="{{prevList}}"></moduleHeader>
+
+
+<moduleHeader src="{{mouthSrc}}" title="{{title[2]}}"></moduleHeader>
+
+
+<view class="hotels">
+    <hotelList Data="{{hotel}}"></hotelList>
+</view>
+
+<view class="bd20"></view>
+<moduleHeader src="{{prevList}}" title="{{title[3]}}"></moduleHeader>
+
+
+
+<view>
+    <block>
+
+    </block>
+</view>
 <view class="prev-team">
-    <view class="prev-team-card">
-        <image class="prev-team-image" src="../image/goods.png"></image>
-        <view class="prev-team-text">九月沙哈拉负重徒步7天游</view>
+    <block wx:for="{{prev}}">
+        <navigator url="../prevDetail/prevDetail?id={{item.id}}">
+            <view class="prev-team-card">
+                <image class="prev-team-image" src="{{item.cover_url}}"></image>
+                <view class="prev-team-text">{{item.title}}</view>
+            </view>
+            <view class="prev-team-people">团队成员：冯川、王广发、养生、于志贤、李明轩、
+                王璐</view>
+        </navigator>
+    </block>
+</view>
+<view class="service">
+    <view class="service-bg">
+        <image src="../image/service.png"></image>
     </view>
-    <view class="prev-team-people">团队成员：冯川、王广发、养生、于志贤、李明轩、
-        王璐</view>
-    <mouth></mouth>
+    <button class="service-btn" open-type="contact"></button>
 </view>
 
 

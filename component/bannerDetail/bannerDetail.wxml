@@ -1,2 +1,4 @@
-<banner url="{{banner}}">
-</banner>
+<banner url="{{url}}" bindswiper="swiper"></banner>
+<view class="banner-num" hidden="{{pageNum}}" style="position: fixed;right: 0;top:{{num}}rpx;">
+    {{index}} / {{length}}
+</view>

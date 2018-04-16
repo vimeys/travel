@@ -6,6 +6,10 @@ Component({
   properties: {
       src:{
         type:String
+      },
+      title:{
+        type:String,
+          value:'主题推荐'
       }
   },
 

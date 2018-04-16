@@ -1,2 +1,1 @@
-<!--pages/mouthList/mouthList.wxml-->
-<text>pages/mouthList/mouthList.wxml</text>
+<mouth isTime="{{isTime}}" isShadow="{{isShadow}}" Data="{{Data}}"></mouth>
