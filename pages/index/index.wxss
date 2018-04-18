@@ -139,6 +139,7 @@
     color:#fff;
     text-align: left;
     line-height: 60rpx;
+    padding-left:30rpx; 
 }
 .prev-team-people{
     width: 100%;
@@ -154,6 +155,7 @@
     right: 35rpx;
     bottom: 65rpx;
     z-index: 10;
+    opacity: 0;
 }
 .service-bg{
     position: absolute;
@@ -176,4 +178,23 @@
     border: none;
     opacity: 0;
     background-image:url("http://chuantu.biz/t6/283/1523612293x-1404793118.png");
+}
+@keyframes option {
+    from{opacity:0}
+
+    to{opacity: 1}
+}
+
+@keyframes option2 {
+    from{opacity:1}
+
+    to{opacity: 0}
+}
+.animate2{
+    animation:option .9s linear;
+    opacity: 1;
+}
+.animate{
+    animation:option .9s linear;
+    opacity: 0;
 }

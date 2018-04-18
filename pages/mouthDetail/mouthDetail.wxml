@@ -1,9 +1,10 @@
-<mouth></mouth>
+<mouth Data="{{image}}" isShadow="{{true}}" isTime="{{true}}"></mouth>
 <view class="mouth-detail-title">
     <view class="mouth-detail-text">活动详情</view>
     <view class="mouth-detail-image"><image src="../image/smile.png"></image></view>
 </view>
 <view style="overflow: hidden;padding:0 30rpx">
-    <wxParse detail="{{Data.content}}"></wxParse>
-
+    <import src="../../utils/wxParse/wxParse.wxml"/>
+    <template is="wxParse" data="{{wxParseData:content.nodes}}"></template>
+    <video src="{{src}}"class="mouth-detail-video"></video>
 </view>

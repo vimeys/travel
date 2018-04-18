@@ -16,7 +16,7 @@
     margin: 0 auto;
 }
 .mouth-bg-shadow{
-    box-shadow: 0 0 5px #999999;
+    box-shadow: 0 0 10px #999999;
 }
 .mouth-time{
     z-index: 3;

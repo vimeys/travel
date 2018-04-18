@@ -9,16 +9,12 @@ Page({
       title:['主体推荐',"每月推荐","酒店推荐",'往期回顾'],
       themeSrc:'../themeList/themeList',
       mouthSrc:'../mouthList/mouthList',
+      hotelList:'../hotelList/hotelList',
       prevList:'../prevList/prevList',
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
+      star:"12",
+      orStar:'12',
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-      banner:[
-          {url:'../pages/image/banner.png'},
-          {url:'../pages/image/banner.png'},
-          {url:'../pages/image/banner.png'}
-      ]
+      timer:null
   },
   //事件处理函数
   bindViewTap: function() {
@@ -27,9 +23,7 @@ Page({
     })
   },
   // 获取组件
-  swiper(e){
 
-  },
   onLoad: function () {
       wx.showLoading({
         title: '加载中'
@@ -111,6 +105,16 @@ Page({
                           hotel.push(Data)
                       }
                       utils.pushHttp(hotel,url.url.http,'cover_url','thumbnail');
+                      hotel.forEach((item)=>{
+                          let a='a';
+                          let no= new Number
+                          no=5-parseInt(item.star)
+                          item.star=a.repeat(item.star);
+
+
+                          console.log(no);
+                          item.orStar=a.repeat(no)
+                      })
                       // utils.pushHttp(hotel,url.url.http,'')
                       console.log(hotel);
                       break;
@@ -141,6 +145,59 @@ Page({
               prev:prev
           })
       })
+    },
+    onPageScroll:function(a=200,b=1000){
+        // if (e.scrollTop) {
+        //     this.setData({
+        //         show: true
+        //     })
+        // }
+        // this.delay(1000,1000,this)()
+        // // setTimeout( (e)=> {
+        // //     console.log(1);
+        // //     this.setData({
+        // //         show:false
+        // //     })
+        // // },10000)
+
+        let timer=null
+        let that=this;
+        return function (that) {
+            console.log(1)
+            clearInterval(timer)
+            timer=setTimeout(function (that) {
+                console.log(1)
+                that.setData({
+                    show:true
+                })
+            },b)
+        }
+    }(),
+    // 截流函数
+    delay:(delay,last,that)=>{
+
+        let timer=null;
+        let lastTime=null;
+        return function () {
+            // var now=+new Date();
+            // if(!lastTime){ lastTime=now}
+            // if(lastTime-now>last){
+            //         console.log(1);
+            //     that.setData({
+            //         show:false
+            //     })
+            //     lastTime=now
+            // }else{
+                clearInterval(timer);
+                timer=setTimeout(()=>{
+                    console.log(1);
+                    that.setData({
+                        show:false
+                    })
+                },delay)
+            // }
+
+        }
     },
   getUserInfo: function(e) {
     console.log(e);

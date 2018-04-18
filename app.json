@@ -1,15 +1,15 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/themeDetail/themeDetail",
+    "pages/hotelList/hotelList",
     "pages/prevDetail/prevDetail",
     
     "pages/hotelDetail/hotelDetail",
-    "pages/themeDetail/themeDetail",
     "pages/mouthList/mouthList",
     "pages/mouthDetail/mouthDetail",
       "pages/mouth/mouth",
     "pages/prevList/prevList",
-    "pages/hotelList/hotelList",
     "pages/themeList/themeList",
     "pages/logs/logs"
   ],

@@ -1,18 +1,26 @@
-<bannerDetail url="{{banner}}"></bannerDetail>
+<banner url="{{banner}}" bindswiper="swiper"></banner>
 <view class="prev-title-total">
-    <view class="prev-title-time">
-        <view class="prev-title-image"><image src="../image/time.png"></image></view>
-        <view class="prev-title-text">{{Data.title}}2018-12-25</view>
+    <view class="prev-title-left">
+        <view class="prev-title-time">
+            <view class="prev-title-image"><image src="../image/time.png"></image></view>
+            <view class="prev-title-text">{{Data.title}}</view>
+        </view>
+        <view class="prev-title-addr">
+            <view class="prev-title-image"><image src="../image/addr.png"></image></view>
+            <view class="prev-title-text">{{Data.add_time}}</view>
+        </view>
     </view>
-    <view class="prev-title-addr">
-        <view class="prev-title-image"><image src="../image/addr.png"></image></view>
-        <view class="prev-title-text">{{Data.add_time}}2018-12-25</view>
+    <view class="prew-title-right">
+        <view class="banner-num">
+            {{index}} / {{length}}
+        </view>
     </view>
 </view>
 <view class="prev-content">
     <view class="prev-content-title">团队成员</view>
     <view class="prev-content-image"><image src="../image/smile.png"></image></view>
     <view class="prev-content-context">
-        <wxParse detail="{{content}}"></wxParse>
+        <import src="../../utils/wxParse/wxParse.wxml"/>
+        <template is="wxParse" data="{{wxParseData:content.nodes}}"></template>
     </view>
 </view>

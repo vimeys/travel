@@ -1,4 +1,7 @@
 // pages/mouthList/mouthList.js
+import ajax from '../../utils/ajax'
+import url from '../../utils/url'
+import utils from '../../utils/totalUtil'
 Page({
 
   /**
@@ -21,8 +24,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+        this.getList()
   },
+    getList(){
+      ajax.promise(url.url.mouthList,{}).then((json)=>{
+          let data=json.data;
+          let arr=[]
+          for(let key in data){
+              arr.push(data[key])
+          }
+          arr.forEach((item)=>{
+              item.published_time=utils.formatYear(item.published_time)
+          })
+          utils.pushHttp(arr,url.url.http,'cover_url','thumbnail')
+
+          this.setData({
+              Data:arr
+          })
+      })
+    },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

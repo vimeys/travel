@@ -1,5 +1,5 @@
-<banner></banner>
+<banner url="{{banner}}"></banner>
 <view class="bd20"></view>
 <view class="hotels">
-    <hotel></hotel>
+    <hotel Data="{{hotel}}"></hotel>
 </view>

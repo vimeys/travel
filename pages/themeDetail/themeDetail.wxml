@@ -1,16 +1,53 @@
+<import src="../../utils/wxParse/wxParse.wxml"/>
 <!--轮播组件-->
-<bannerDetail pageNum="{{pageNum}}" num="{{num}}"></bannerDetail>
+<banner url="{{banner}}" bindswiper="swiper"></banner>
 <view class="theme-titel">
-    <view class="theme-combo">
-        <!--<view class="theme-combo-left"></view>-->
-        <view class="them-combo-name">两L人团</view>
-        <!--<view class="theme-combo-right"></view>-->
+    <view class="theme-title-left">
+        <view class="theme-combo">
+            <!--<view class="theme-combo-left"></view>-->
+            <view class="them-combo-name">两L人团</view>
+            <!--<view class="theme-combo-right"></view>-->
+        </view>
+        <view class="theme-name">欧洲7国十五日经典游</view>
     </view>
-    <view class="theme-name">欧洲7国十五日经典游</view>
+   <view class="theme-title-right">
+       <view class="banner-num">
+           {{index}} / {{length}}
+       </view>
+   </view>
 </view>
 <view class="bd20"></view>
+
 <view class="theme-detail">
-    <view class="theme-detail-zan none">图文展示</view>
-    <view class="theme-detail-det">旅游详情</view>
+    <view class="theme-detail-zan {{active==0?'none':''}}" bindtap='click' data-type="0">图文展示</view>
+    <view class="theme-detail-det {{active==1?'none':''}}" bindtap="click" data-type="1">旅游详情</view>
 </view>
-<wxParse detail=""></wxParse>
+
+<view style="height: 20rpx"></view>
+
+<!--内容区块-->
+<view>
+    <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{windowWidth-60}}px" bindchange="bindchange">
+        <swiper-item>
+            <scroll-view scroll-y="true" style="height:{{windowWidth-60}}px">
+                <template is="wxParse" data="{{wxParseData:content.nodes}}"></template>
+            </scroll-view>
+        </swiper-item>
+        <!-- 业务范围 -->
+        <swiper-item>
+            <scroll-view scroll-y="true" style="height:{{windowWidth-60}}px">
+                <template is="wxParse" data="{{wxParseData:content2.nodes}}"></template>
+            </scroll-view>
+        </swiper-item>
+    </swiper>
+</view>
+<view style="height: 120rpx"></view>
+
+<view class="theme-detail-footer">
+    <view class="theme-detail-price">
+        <text class="theme-detail-red">¥{{price}}</text>/人起
+    </view>
+    <view class="theme-detail-btn">
+        <button class="theme-detail-btn" open-type="contact">联系客服</button>
+    </view>
+</view>

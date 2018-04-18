@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view>
-     <banner url="{{banner}}"  bindswiper="swiper">
+     <banner url="{{banner}}"  >
          <!--<view>这里是插入到组件slot中的内容</view>-->
      </banner>
     <!--<bannerDetail>-->
@@ -10,9 +10,10 @@
 <view class="bd20"></view>
 
 <moduleHeader src="{{themeSrc}}" title="{{title[0]}}"></moduleHeader>
+
 <view class="theme">
     <view class="theme-left">
-        <navigator url="../themeDetail/themeDetail?id={{theme[0].id}}">
+        <navigator url="../themeList/themeList?id={{theme[0].id}}">
             <view class="theme-left-top">
                 <image  class="theme-left-topBg" src="{{theme[0].logo}}"></image>
                 <view class="theme-module">
@@ -23,20 +24,21 @@
                 </view>
             </view>
         </navigator>
-        <navigator url="../themeDetail/themeDetail?id={{theme[1].id}}"></navigator>
-        <view class="theme-left-bottom">
-            <view class="theme-left-top">
-                <image  class="theme-left-topBg" src="{{theme[1].logo}}"></image>
-                <view class="theme-module">
-                    <view class="theme-module-text">
-                        <view>¥{{theme[1].price}}<text class="theme-module-start">起</text></view>
-                        <view>{{theme[1].name}}</view>
+        <navigator url="../themeList/themeList?id={{theme[1].id}}">
+            <view class="theme-left-bottom">
+                <view class="theme-left-top">
+                    <image  class="theme-left-topBg" src="{{theme[1].logo}}"></image>
+                    <view class="theme-module">
+                        <view class="theme-module-text">
+                            <view>¥{{theme[1].price}}<text class="theme-module-start">起</text></view>
+                            <view>{{theme[1].name}}</view>
+                        </view>
                     </view>
                 </view>
             </view>
-        </view>
+        </navigator>
     </view>
-    <navigator url="../themeDetail/themeDetail?id={{theme[2].id}}">
+    <navigator url="../themeList/themeList?id={{theme[2].id}}">
         <view class="theme-right">
             <image class="theme-right-bg" src="{{theme[2].logo}}"></image>
             <view class="theme-right-text">
@@ -47,20 +49,22 @@
     </navigator>
 </view>
 <view class="bd20"></view>
+
+
 <moduleHeader src="{{mouthSrc}}" title="{{title[1]}}"></moduleHeader>
 <view class="mouths">
     <mouth isTime="{{false}}" isShow="{{false}}" Data="{{mouths}}"></mouth>
 </view>
 
 
-<view class="bd20"></view>
+<view class="bd20" ></view>
 
 
-<moduleHeader src="{{mouthSrc}}" title="{{title[2]}}"></moduleHeader>
+<moduleHeader src="{{hotelList}}" title="{{title[2]}}" ></moduleHeader>
 
 
 <view class="hotels">
-    <hotelList Data="{{hotel}}"></hotelList>
+    <hotelList Data="{{hotel}}" str="{{star}}" orStr="{{orStar}}"></hotelList>
 </view>
 
 <view class="bd20"></view>
@@ -85,7 +89,7 @@
         </navigator>
     </block>
 </view>
-<view class="service">
+<view class="service {{show?'animate':'animate2'}}">
     <view class="service-bg">
         <image src="../image/service.png"></image>
     </view>

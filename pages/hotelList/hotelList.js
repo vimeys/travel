@@ -1,4 +1,7 @@
 // pages/hotelList/hotelList.js
+import  ajax from '../../utils/ajax'
+import  url from '../../utils/url'
+import  utils from '../../utils/totalUtil'
 Page({
 
   /**
@@ -12,9 +15,48 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.getBanner();
+    this.getList()
   },
-
+    // 获取酒店列表
+    getList(){
+      ajax.promise(url.url.hotelList,{}).then((json)=>{
+          console.log(json);
+          let hotel=[];
+          for(var key in json.data){
+              hotel.push(json.data[key])
+          }
+          utils.pushHttp(hotel,url.url.http,'cover_url','thumbnail');
+          hotel.forEach((item)=>{
+              let star=item.star;
+              let a='a'
+              let orStar=5-star
+              item.star=a.repeat(star)
+              item.orStar=a.repeat(orStar)
+          })
+          this.setData({
+              hotel:hotel
+          })
+      })
+    },
+    // 轮播图片
+    getBanner(){
+        ajax.promise(url.url.banner,{position:2}).then((json)=>{
+          let arr=[]
+            for(var key in json.data){
+                // console.log(json.data[key]['image']);
+                arr.push(json.data[key])
+            }
+            utils.pushHttp(arr,url.url.http,'image','thumbnail');
+          let arr2=[]
+            arr.forEach((item)=>{
+                arr2.push({url:item.image})
+            })
+            this.setData({
+                banner:arr2
+            })
+        })
+    },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

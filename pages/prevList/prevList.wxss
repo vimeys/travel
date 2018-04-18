@@ -1,11 +1,13 @@
 /* pages/prevList/prevList.wxss */
+@import "../../utils/wxParse/wxParse.wxss";
 .prev-list{
-    padding: 30rpx;
+    padding: 0 30rpx;
 }
 .prev-li{
     display: flex;
     justify-content: space-between;
     padding-bottom: 30rpx;
+    padding-top: 30rpx;
     border-bottom: 1px solid #eee;
 }
 .prev-title{

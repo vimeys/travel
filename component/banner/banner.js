@@ -21,13 +21,10 @@ Component({
     autoplay:true,
     interval:4000,
     duration:1000,
-      banner: [
-          { url: '../../pages/image/banner.png' },
-          { url: '../../pages/image/banner.png' },
-          { url: '../../pages/image/banner.png' }
-      ]
   },
-
+    ready(){
+        // console.log(this.properties.url.length);
+    },
   /**
    * 组件的方法列表
    */
@@ -36,8 +33,9 @@ Component({
             console.log(this.data.interval)
       },
       swiper(e){
+          // console.log(this.properties);
           var myEventDetail = {
-              index:e.detail.current,
+              index:e.detail.current+1,
               length:this.data.url.length
           }; // detail对象，提供给事件监听函数
           var myEventOption = {}; // 触发事件的选项

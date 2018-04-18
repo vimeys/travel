@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "banner": "../../component/banner",
+    "banner": "../../component/banner/banner",
     "hotel":"../../component/hotelList/hotelList"
   }
 }

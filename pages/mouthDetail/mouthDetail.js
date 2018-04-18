@@ -2,6 +2,7 @@
 import ajax from '../../utils/ajax';
 import  url from '../../utils/url'
 import utils from '../../utils/totalUtil'
+import wxParse from "../../utils/wxParse/wxParse";
 Page({
 
   /**
@@ -22,8 +23,18 @@ Page({
       type:3,
         id:id
     }).then((json)=>{
+      let src=url.url.http+json.data.video_url.files[0].url;
+
+      let image=[{
+          cover_url:url.url.http+json.data.cover_url.thumbnail,
+          title:    json.data.title,
+          published_time:utils.formatYear(json.data.published_time)
+      }];
+        wxParse.wxParse('content','html',json.data.content,this,5)
       this.setData({
-          Data:json.data
+          Data:json.data,
+          image:image,
+          src:src
       })
     })
   },

@@ -16,6 +16,13 @@ Component({
      */
     data: {},
     ready(abc){
+        console.log('生命1');
+        console.log(this.properties.detail);
+        wxParse.wxParse('content','html',this.properties.detail,this,5)
+    },
+    created(abc){
+        console.log('生命2');
+        console.log(this.properties.detail);
         wxParse.wxParse('content','html',this.properties.detail,this,5)
     },
     /**

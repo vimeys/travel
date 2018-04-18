@@ -2,27 +2,35 @@
 import ajax from '../../utils/ajax';
 import  url from '../../utils/url'
 import utils from '../../utils/totalUtil'
+import wxParse from "../../utils/wxParse/wxParse";
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      url:[
-          { url: '../../pages/image/banner.png' },
-          { url: '../../pages/image/banner.png' },
-          { url: '../../pages/image/banner.png' }
-      ],
-      num:420,
-      pageNum:false
+      index:1,
+      length:1,
+      active:0,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+      wx.showLoading({
+          title:'加载中'
+      })
+    var that=this;
+      wx.getSystemInfo({
+          success(res){
+              that.setData({
+                  windowWidth:res.windowHeight
+              })
+          }
+      })
     let id=options.id;
-      this.getDetail(id)
+      this.getDetail(7)
   },
 
     // 获取详情
@@ -32,30 +40,63 @@ Page({
           id:id
       }).then((json)=>{
         console.log(json);
+        let arr=json.data.images.photos
+        arr.forEach(function (item) {
+            item.url=url.url.http+item.url
+        });
+        let price=json.data.price;
+
+        let array=price.split('.');
+          wxParse.wxParse('content','html',json.data.desc,this,5)
+          wxParse.wxParse('content2','html',json.data.intro,this,5)
           this.setData({
-              url:json.data.images.photos
+              banner:arr,
+              price:array[0],
+              Data:json.data,
+              length:arr.length
           })
+          wx.hideLoading()
       })
     },
 
-    onPageScroll(e){
-      // console.log(e)
-        let scrollNum=e.scrollTop;
-      let num;
-        num=420-scrollNum*2;
-        console.log(num);
+    // 轮播滚动数字变化
+    swiper(e){
+        let idx=e.detail.index;
+        let len=e.detail.length;
+        // console.log(idx);
         this.setData({
-
-            num:num
+            index:idx,
+            length:len
         })
-        if(e.scrollTop>210){
-          this.setData({
-              pageNum:true
-          })
-        }else{
-          this.setData({
-            pageNum:false
+    },
+
+    //点击
+    click(e){
+      let id=e.currentTarget.dataset.type;
+        if(id==0){
+            this.setData({
+                currentTab:0,
+                active:0
             })
+        }else if(id==1){
+            this.setData({
+                active:1,
+                currentTab:1
+            })
+        }
+    },
+    // 能容切换
+    bindchange(e){
+        console.log(e.detail.current);
+        let id=e.detail.current;
+        if(id==0){
+            this.setData({
+                active:0
+            })
+        }else if(id==1){
+          this.setData({
+              active:1
+          })
         }
     },
   /**

@@ -1,41 +1,29 @@
 <view class="theme-header">
-    <image src="../image/goods.png" class="theme-header-image"></image>
+    <image src="{{image}}" class="theme-header-image"></image>
 </view>
+
 <view class="scroll">
     <scroll-view scroll-x  class="scroll-item">
-        <view>123</view>
-        <view>saljfla</view>
-        <view>saljfla</view>
-        <view>saljfla</view>
-        <view>saljfla</view>
-        <view>saljfla</view>
-        <view>saljfla</view>
-        <view>saljfla</view>
-        <view>saljfla</view>
-        <view>saljfla</view>
-        <view>saljfla</view>
-        <view>saljfla</view>
-        <view>saljfla</view>
-        <view>saljfla</view>
-        <view>saljfla</view>
+        <block wx:for="{{themeList}}" wx:for-index="idx">
+            <view class="{{idx==index?'active':''}}" bindtap="chooseTheme" data-index="{{idx}}" >{{item.name}}</view>
+        </block>
     </scroll-view>
 </view>
 <view class="theme-list">
     <view class="theme-text">1231safasdfa阿斯顿发送到发送到发撒的发阿斯顿发送到发</view>
-    <view class="theme-li">
-        <image  class="theme-li-image" src="../image/goods.png"></image>
-        <view>alsdjflasfjlasjdflasjdf</view>
-    </view>
-    <view class="theme-li">
-        <image  class="theme-li-image" src="../image/goods.png"></image>
-        <view>alsdjflasfjlasjdflasjdf</view>
-    </view>
-    <view class="theme-li">
-        <image  class="theme-li-image" src="../image/goods.png"></image>
-        <view>alsdjflasfjlasjdflasjdf</view>
-    </view>
-    <view class="theme-li">
-        <image  class="theme-li-image" src="../image/goods.png"></image>
-        <view>alsdjflasfjlasjdflasjdf</view>
-    </view>
+    <block wx:for="{{Data}}">
+        <navigator url="../themeDetail/themeDetail?id={{item.id}}">
+        <!--<navigator url="../themeDetail/themeDetail">-->
+            <view class="theme-li">
+                <image  class="theme-li-image" src="{{item.cover_url}}"></image>
+                <view class="theme-item-list">
+                    <view class="theme-item-title">{{item.title}}</view>
+                    <block wx:for="{{item.label}}" wx:for-item="item2">
+                        <view class="theme-item-li"><view class="theme-item-point"></view>{{item2}}</view>
+                    </block>
+
+                </view>
+            </view>
+        </navigator>
+    </block>
 </view>

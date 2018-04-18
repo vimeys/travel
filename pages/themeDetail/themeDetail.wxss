@@ -1,8 +1,26 @@
 /* pages/themeDetail/themeDetail.wxss */
+@import "../../utils/wxParse/wxParse.wxss";
 .theme-titel{
     display: flex;
-    flex-direction:column;
+    flex-direction:row;
+    justify-content: space-between;
+}
+.theme-title-left{
+    display: flex;
+    flex-direction: column;
     justify-items: flex-start;
+}
+
+.banner-num{
+    width: 135rpx;
+    height: 60rpx;
+    border-bottom-left-radius: 30rpx;
+    border-top-left-radius: 30rpx;
+    background: #00A58C;
+    color:#fafafa;
+    font-size: 26rpx;
+    text-align: center;line-height: 60rpx;
+
 }
 .theme-combo{
     display: flex;
@@ -46,14 +64,42 @@
 }
 .theme-detail-zan{
     text-align: center;
-    border-bottom: 1px solid #00A58C;
+    border-bottom: none;
     line-height: 100rpx;
 }
 .theme-detail-det{
-    border-bottom: 1px solid #00A58C;
+    border-bottom: none;
     text-align: center;
     line-height: 100rpx;
 }
 .none{
-    border-bottom: none;
+    border-bottom: 1px solid #00A58C;
+}
+.theme-detail-footer{
+    display: flex;
+    border-top: 1px solid #eee;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 100rpx;
+    padding: 0 40rpx;
+    justify-items: center;
+    align-items: center;
+    background: #fff;
+}
+.theme-detail-btn{
+    border: none;
+    width: 210rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    color:#fff;
+    border-radius: 35rpx;
+    background: #00A58C;
+}
+.theme-detail-red{
+    font-size: 50rpx;
+    color:#FF4200;
 }

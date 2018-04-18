@@ -1,8 +1,12 @@
 /* pages/prevDetail/prevDetail.wxss */
 .prev-title-total{
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.prev-title-left{
+    display: flex;
     flex-direction: column;
-
 }
 .prev-title-time,.prev-title-addr{
     display: flex;
@@ -12,7 +16,16 @@
     padding-left: 30rpx;
     margin-bottom: 30rpx;
 }
-.prev-title-text{
+
+.banner-num{
+    width: 135rpx;
+    height: 60rpx;
+    border-bottom-left-radius: 30rpx;
+    border-top-left-radius: 30rpx;
+    background: #00A58C;
+    color:#fafafa;
+    font-size: 26rpx;
+    text-align: center;line-height: 60rpx;
 
 }
 .prev-title-image image{
@@ -26,12 +39,16 @@
     text-align: center;
     background: #F7FFF8;
     padding-top: 30rpx;
+    overflow: hidden;
 }
 .prev-content-image image{
-        width: 82rpx;
-        height: 22rpx;
+    width: 82rpx;
+    height: 22rpx;
     margin-bottom: 50rpx;
 }
 .prev-content-context{
     padding-bottom: 200rpx;
 }
+
+
+@import "../../utils/wxParse/wxParse.wxss";

@@ -15,13 +15,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中'
+    })
     this.getList()
   },
 
     getList(e){
       ajax.promise(url.url.prevList,{}).then((json)=>{
         utils.pushHttp(json.data,url.url.http,'cover_url','thumbnail')
-        json.data.add_time=utils.formatYear(json.data.add_time);
+          for(var key in json.data){
+              json.data[key].add_time=utils.formatYear(json.data[key].add_time)
+          }
+          // json.data.forEach((item)=>{
+          //   item.add_time=utils.formatYear(item.add_time);
+          // })
+        // json.data.add_time=utils.formatYear(json.data.add_time);
+          wx.hideLoading();
         this.setData({
             Data:json.data
         })

@@ -1,4 +1,19 @@
 /* pages/themeList/themeList.wxss */
+.theme-header{
+    width: 100%;
+    height: 400rpx;
+    margin:  0 auto;
+    text-align: center;
+}
+
+ .theme-header image{
+    width: 710rpx;
+
+    height: 380rpx;
+    margin: 20rpx auto 0;
+     box-shadow:  0 0 10rpx #999;
+     border-radius: 10rpx;
+}
 .scroll{
     width: 100%;
     height: 120rpx;
@@ -16,8 +31,13 @@
     line-height: 60rpx;
     padding: 0 30rpx;
     border-radius: 30rpx;
-    background: #00A58C;
+    /*background: #00A58C;*/
+    color:#333;
     margin: 0 10rpx;
+}
+.scroll-item .active{
+    background: #00A58C;
+    color:#fff;
 }
 /*主题列表*/
 .theme-list{
@@ -28,15 +48,48 @@
 }
 .theme-text{
     width: 345rpx;
-    height: 100rpx;
+    /*height: 140rpx;*/
+    display: flex;
+    padding: 20rpx;
     background: #fff;
+    text-align: justify;
+    margin-bottom: 20rpx;
+    border-radius: 10rpx;
 }
 .theme-li{
     width: 344rpx;
     background: #fff;
+    border-radius: 10rpx;
+    overflow: hidden;
+    margin-bottom: 20rpx;
+}
+.theme-li>view{
+    box-sizing: border-box;
+    padding: 20rpx ;
+    text-align: justify;
 }
 .theme-li-image{
     width: 345rpx;
+}
+.theme-item-list{
+    display: flex;
+    flex-direction: column;
+    padding: 20rpx 30rpx;
+}
 
-
+.theme-item-title{
+    font-size: 24rpx;
+    margin-bottom: 20rpx;
+}
+.theme-item-li{
+    font-size: 24rpx;
+    margin-bottom: 10rpx;
+    color:#999;
+}
+.theme-item-point{
+    display: inline-block;
+    width: 14rpx;
+    height: 14rpx;
+    border-radius: 50%;
+    border:  1px solid #00A58C;
 }

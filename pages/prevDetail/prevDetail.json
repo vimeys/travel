@@ -1,6 +1,6 @@
 {
   "usingComponents":{
-    "bannerDetail":  "../../component/bannerDetail/bannerDetail",
+    "banner":  "../../component/banner/banner",
     "wxParse":"../../component/wxParse/wxParse"
   }
 }

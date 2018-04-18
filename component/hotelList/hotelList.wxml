@@ -5,10 +5,10 @@
                 <view class="hotel-card">
                     <image class="hotel-image" src="{{item.cover_url}}"></image>
                     <view class="hotel-stars">
-                        <block wx:for="{{str}}">
+                        <block wx:for="{{item.star}}">
                             <image src="../../pages/image/star.png"></image>
                         </block>
-                        <block wx:for="{{orStr}}">
+                        <block wx:for="{{item.orStar}}">
                             <image src="../../pages/image/orStar.png"></image>
                         </block>
                     </view>

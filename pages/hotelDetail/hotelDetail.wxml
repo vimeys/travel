@@ -1,2 +1,54 @@
-<!--pages/hotelDetail/hotelDetail.wxml-->
-<text>pages/hotelDetail/hotelDetail.wxml</text>
+<import src="../../utils/wxParse/wxParse.wxml"/>
+
+<banner url="{{banner}}" bindswiper="swiper"></banner>
+<view class="prev-title-total">
+    <view class="prev-title-left">
+        <view class="prev-title-time">
+            <view class="prev-title-image"><image src="../image/RMB.png"></image></view>
+            <view class="prev-title-text">人均：¥{{Data.title}}晚</view>
+        </view>
+        <view class="prev-title-addr">
+            <view class="prev-title-image"><image src="../image/addr.png"></image></view>
+            <view class="prev-title-text">{{Data.add_time}}2018-12-25</view>
+        </view>
+    </view>
+    <view class="prew-title-right">
+        <view class="banner-num">
+            {{index}} / {{length}}
+        </view>
+    </view>
+</view>
+<view class="bd20"></view>
+
+<view class="theme-detail">
+    <view class="theme-detail-zan {{active==0?'none':''}}" bindtap='click' data-type="0">图文展示</view>
+    <view class="theme-detail-det {{active==1?'none':''}}" bindtap="click" data-type="1">旅游详情</view>
+</view>
+<view style="height: 20rpx"></view>
+<view>
+
+    <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{windowWidth-60}}px" bindchange="bindchange">
+
+
+        <swiper-item>
+
+
+            <scroll-view scroll-y="true" style="height:{{windowWidth-60}}px">
+                <template is="wxParse" data="{{wxParseData:content.nodes}}"></template>
+
+            </scroll-view>
+        </swiper-item>
+        <!-- 业务范围 -->
+        <swiper-item>
+            <scroll-view scroll-y="true" style="height:{{windowWidth-60}}px">
+                <template is="wxParse" data="{{wxParseData:content2.nodes}}"></template>
+            </scroll-view>
+        </swiper-item>
+
+
+
+    </swiper>
+</view>
+
+
+<template is="wxParse" data="{{wxParseData:content.nodes}}"></template>
